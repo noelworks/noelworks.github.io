@@ -1,19 +1,28 @@
 {
-  "name": "parcel-react-client-starter",
-  "private": true,
-  "version": "0.0.0",
-  "source": "src/index.html",
-  "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
-  "devDependencies": {
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "parcel": "^2.14.0"
-  }
+	"name": "parcel-react-client-starter",
+	"private": true,
+	"version": "0.0.0",
+	"source": "src/index.html",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build"
+	},
+	"dependencies": {
+		"@tailwindcss/postcss": "^4.1.11",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"tailwindcss": "^4.1.11"
+	},
+	"devDependencies": {
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"clsx": "^2.1.1",
+		"eslint": "^8.57.1",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"parcel": "^2.14.0",
+		"prettier": "^3.6.2",
+		"prettier-plugin-tailwindcss": "^0.6.14"
+	}
 }
