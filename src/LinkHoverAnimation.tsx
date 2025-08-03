@@ -22,22 +22,26 @@ const LinkHoverAnimation: React.FunctionComponent<LinkHoverAnimationProps> = ({
 				invisible: !isActive
 			})}
 		>
-			<div
-				className={clsx(commonAnimationProperties, 'right-0 border-blue-300', {
-					[commonActiveAnimationProperties]: isActive,
-					'translate-x-32': !isActive
-				})}
-			>
-				{AnimateFromLeft ? <AnimateFromLeft /> : null}
-			</div>
-			<div
-				className={clsx(commonAnimationProperties, 'left-0 border-amber-300', {
-					[commonActiveAnimationProperties]: isActive,
-					'-translate-x-32': !isActive
-				})}
-			>
-				{AnimateFromRight ? <AnimateFromRight /> : null}
-			</div>
+			{AnimateFromLeft ? (
+				<div
+					className={clsx(commonAnimationProperties, 'right-0 border-blue-300', {
+						[commonActiveAnimationProperties]: isActive,
+						'translate-x-32': !isActive
+					})}
+				>
+					<AnimateFromLeft />
+				</div>
+			) : null}
+			{AnimateFromRight ? (
+				<div
+					className={clsx(commonAnimationProperties, 'left-0 border-amber-300', {
+						[commonActiveAnimationProperties]: isActive,
+						'-translate-x-32': !isActive
+					})}
+				>
+					<AnimateFromRight />
+				</div>
+			) : null}
 		</div>
 	);
 };

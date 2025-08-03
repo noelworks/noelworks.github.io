@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 type FakeLinkProps = {
 	isActive: boolean;
 	title: string;
@@ -6,7 +8,7 @@ type FakeLinkProps = {
 
 const FakeLink: React.FunctionComponent<FakeLinkProps> = ({ title, isActive, onHover }) => {
 	return (
-		<li onMouseEnter={onHover} className={isActive ? 'bg-red-50' : ''}>
+		<li onMouseEnter={onHover} className={clsx('cursor-pointer')}>
 			<span>--</span>
 			<span>{title}</span>
 		</li>

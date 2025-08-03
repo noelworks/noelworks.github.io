@@ -36,10 +36,9 @@ export const ALL_LINKS: Record<LINK_SECTION, LINK_DETAILS[]> = {
 			title: 'Food Delivery App',
 			id: 'ui-ux-0',
 			animate: {
-				fromRight: () => <div>Test</div>,
 				fromLeft: () => (
 					<div>
-						<img src={NonVegMart} />
+						<img src={NonVegMart} alt="Mobile app mockup for an app that sells poultry" />
 					</div>
 				)
 			}
@@ -48,10 +47,12 @@ export const ALL_LINKS: Record<LINK_SECTION, LINK_DETAILS[]> = {
 			title: 'Interaction Design',
 			id: 'ui-ux-1',
 			animate: {
-				fromRight: () => <div>Test</div>,
 				fromLeft: () => (
 					<div>
-						<img src={Equalizer} />
+						<img
+							src={Equalizer}
+							alt="Mockup of an equalizer app with bars to adjust different aspects of sound"
+						/>
 					</div>
 				)
 			}
@@ -62,14 +63,14 @@ export const ALL_LINKS: Record<LINK_SECTION, LINK_DETAILS[]> = {
 			animate: {
 				fromRight: () => (
 					<div>
-						<img src={DesignSystem3} />
-						<img src={DesignSystem4} />
+						<img src={DesignSystem3} alt="A button element shown as part of a design system" />
+						<img src={DesignSystem4} alt="A group of buttons shown in different configurations" />
 					</div>
 				),
 				fromLeft: () => (
 					<div>
-						<img src={DesignSystem2} />
-						<img src={DesignSystem1} />
+						<img src={DesignSystem2} alt="A color pallete shown as part of design system" />
+						<img src={DesignSystem1} alt="A mockup of an app using the design system" />
 					</div>
 				)
 			}
@@ -80,8 +81,8 @@ export const ALL_LINKS: Record<LINK_SECTION, LINK_DETAILS[]> = {
 			animate: {
 				fromLeft: () => (
 					<div>
-						<img src={HairSalonAppMockup1} />
-						<img src={HairSalonAppMockup2} />
+						<img src={HairSalonAppMockup1} alt="Hair salon mockup" />
+						<img src={HairSalonAppMockup2} alt="Hair salon mockup showing calendar" />
 					</div>
 				)
 			}
@@ -89,23 +90,17 @@ export const ALL_LINKS: Record<LINK_SECTION, LINK_DETAILS[]> = {
 		{
 			title: 'Courier Services',
 			id: 'ui-ux-4',
-			animate: {
-				fromRight: () => <div>Test4</div>
-			}
+			animate: {}
 		},
 		{
 			title: 'Data Visualisation',
 			id: 'ui-ux-5',
-			animate: {
-				fromRight: () => <div>Test5</div>
-			}
+			animate: {}
 		},
 		{
 			title: 'Work in Progress',
 			id: 'ui-ux-6',
-			animate: {
-				fromRight: () => <div>Test6</div>
-			}
+			animate: {}
 		}
 	],
 	[LINK_SECTION.FRAMES_FORMS]: [
