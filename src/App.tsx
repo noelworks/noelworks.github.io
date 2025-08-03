@@ -46,7 +46,7 @@ export function App() {
 		<>
 			<div ref={hoverAnimationPortal}></div>
 			<Header></Header>
-			<main>
+			<main className="m-32">
 				<section>
 					<h1>UI-UX Design Projects</h1>
 					<ul>{renderLinks(LINK_SECTION.UI_UX_DESIGN_PROJECTS)}</ul>
