@@ -21,15 +21,7 @@ export enum LINK_SECTION {
 	UI_UX_DESIGN_PROJECTS = 1,
 	FRAMES_FORMS = 2
 }
-console.log(
-	Equalizer,
-	HairSalonAppMockup1,
-	HairSalonAppMockup2,
-	DesignSystem1,
-	DesignSystem2,
-	DesignSystem3,
-	DesignSystem4
-);
+
 export const ALL_LINKS: Record<LINK_SECTION, LINK_DETAILS[]> = {
 	[LINK_SECTION.UI_UX_DESIGN_PROJECTS]: [
 		{

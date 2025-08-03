@@ -2,7 +2,7 @@ export default function Footer() {
 	return (
 		<footer className="grid grid-cols-4 gap-6">
 			<section className="border-t-2">
-				<h3>Services</h3>
+				<h1>Services</h1>
 				<ul>
 					<li>Interface Design</li>
 					<li>Experience Design</li>
@@ -14,7 +14,7 @@ export default function Footer() {
 				</ul>
 			</section>
 			<section className="border-t-2">
-				<h3>Toolkit</h3>
+				<h1>Toolkit</h1>
 				<ul>
 					<li>Figma</li>
 					<li>Adobe Illustrator</li>
@@ -24,7 +24,7 @@ export default function Footer() {
 				</ul>
 			</section>
 			<section className="border-t-2">
-				<h3>Bio</h3>
+				<h1>Bio</h1>
 				<p>
 					Designing for people, not just pixels — I’m a UX design student exploring how stories,
 					systems, and empathy shape better digital worlds.
