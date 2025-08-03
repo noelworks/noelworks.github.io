@@ -1,6 +1,6 @@
 export default function Footer() {
 	return (
-		<footer className="grid grid-cols-3 gap-6">
+		<footer className="grid grid-cols-4 gap-6">
 			<section className="border-t-2">
 				<h3>Services</h3>
 				<ul>

@@ -64,11 +64,7 @@ export function App() {
 									<FakeLink
 										title={linkDetails.title}
 										isActive={isActive}
-										onHover={onProjectTitleHover.bind(
-											null,
-											LINK_SECTION.UI_UX_DESIGN_PROJECTS,
-											idx
-										)}
+										onHover={onProjectTitleHover.bind(null, LINK_SECTION.FRAMES_FORMS, idx)}
 									/>
 									{hoverAnimationPortal.current &&
 										createPortal(
