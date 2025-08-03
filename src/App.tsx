@@ -6,6 +6,7 @@ import Header from './Header.tsx';
 import LinkHoverAnimation from './LinkHoverAnimation.tsx';
 import { ALL_LINKS, LINK_DETAILS, LINK_SECTION } from './constants.tsx';
 import { createPortal } from 'react-dom';
+import H1 from './H1.tsx';
 
 export function App() {
 	const [activeLinkIdx, setActiveLinkIdx] = useState<number>(NaN);
@@ -48,11 +49,11 @@ export function App() {
 			<Header></Header>
 			<main className="m-32">
 				<section>
-					<h1>UI-UX Design Projects</h1>
+					<H1>UI-UX Design Projects</H1>
 					<ul>{renderLinks(LINK_SECTION.UI_UX_DESIGN_PROJECTS)}</ul>
 				</section>
 				<section>
-					<h1>Frames & Forms</h1>
+					<H1>Frames & Forms</H1>
 					<ul>{renderLinks(LINK_SECTION.FRAMES_FORMS)}</ul>
 				</section>
 			</main>
