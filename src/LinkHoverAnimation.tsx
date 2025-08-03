@@ -12,8 +12,9 @@ const LinkHoverAnimation: React.FunctionComponent<LinkHoverAnimationProps> = ({
 	isActive
 }) => {
 	const commonAnimationProperties =
-		'absolute top-0 h-full w-[50vw] -translate-x-32 border-2 border-amber-300 opacity-50 transition-all duration-300 ease-in';
-	const commonActiveAnimationProperties = 'translate-x-0 opacity-100';
+		'absolute top-0 h-full w-[50vw] -translate-x-32 border-2 border-amber-300 opacity-50';
+	const commonActiveAnimationProperties =
+		'translate-x-0 opacity-100 transition-all duration-300 ease-in';
 
 	return (
 		<div

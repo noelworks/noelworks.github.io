@@ -4,7 +4,7 @@ import FakeLink from './FakeLink.tsx';
 import Footer from './Footer.tsx';
 import Header from './Header.tsx';
 import LinkHoverAnimation from './LinkHoverAnimation.tsx';
-import { ALL_LINKS, LINK_SECTION } from './constants.tsx';
+import { ALL_LINKS, LINK_DETAILS, LINK_SECTION } from './constants.tsx';
 import { createPortal } from 'react-dom';
 
 export function App() {
@@ -17,6 +17,31 @@ export function App() {
 		setActiveLinkSection(linkSection);
 	}
 
+	function renderLink(linkDetails: LINK_DETAILS, isActive: boolean, onHover: () => void) {
+		return (
+			<Fragment key={linkDetails.id}>
+				<FakeLink title={linkDetails.title} isActive={isActive} onHover={onHover} />
+				{hoverAnimationPortal.current &&
+					createPortal(
+						<LinkHoverAnimation
+							AnimateFromRight={linkDetails?.animate?.fromRight}
+							AnimateFromLeft={linkDetails?.animate?.fromLeft}
+							isActive={isActive}
+						></LinkHoverAnimation>,
+						hoverAnimationPortal.current
+					)}
+			</Fragment>
+		);
+	}
+
+	function renderLinks(linkSection: LINK_SECTION) {
+		return ALL_LINKS[linkSection].map((linkDetails, idx) => {
+			const isActive = activeLinkSection === linkSection && activeLinkIdx === idx;
+
+			return renderLink(linkDetails, isActive, onProjectTitleHover.bind(null, linkSection, idx));
+		});
+	}
+
 	return (
 		<>
 			<div ref={hoverAnimationPortal}></div>
@@ -24,60 +49,11 @@ export function App() {
 			<main>
 				<section>
 					<h1>UI-UX Design Projects</h1>
-					<ul>
-						{ALL_LINKS[LINK_SECTION.UI_UX_DESIGN_PROJECTS].map((linkDetails, idx) => {
-							const isActive =
-								activeLinkSection === LINK_SECTION.UI_UX_DESIGN_PROJECTS && activeLinkIdx === idx;
-							return (
-								<Fragment key={idx}>
-									<FakeLink
-										key={idx}
-										title={linkDetails.title}
-										isActive={isActive}
-										onHover={onProjectTitleHover.bind(
-											null,
-											LINK_SECTION.UI_UX_DESIGN_PROJECTS,
-											idx
-										)}
-									/>
-									{hoverAnimationPortal.current &&
-										createPortal(
-											<LinkHoverAnimation
-												AnimateFromRight={linkDetails?.animate?.fromRight}
-												isActive={isActive}
-											></LinkHoverAnimation>,
-											hoverAnimationPortal.current
-										)}
-								</Fragment>
-							);
-						})}
-					</ul>
+					<ul>{renderLinks(LINK_SECTION.UI_UX_DESIGN_PROJECTS)}</ul>
 				</section>
 				<section>
 					<h1>Frames & Forms</h1>
-					<ul>
-						{ALL_LINKS[LINK_SECTION.FRAMES_FORMS].map((linkDetails, idx) => {
-							const isActive =
-								activeLinkSection === LINK_SECTION.FRAMES_FORMS && activeLinkIdx === idx;
-							return (
-								<Fragment key={idx}>
-									<FakeLink
-										title={linkDetails.title}
-										isActive={isActive}
-										onHover={onProjectTitleHover.bind(null, LINK_SECTION.FRAMES_FORMS, idx)}
-									/>
-									{hoverAnimationPortal.current &&
-										createPortal(
-											<LinkHoverAnimation
-												AnimateFromRight={linkDetails?.animate?.fromRight}
-												isActive={isActive}
-											></LinkHoverAnimation>,
-											hoverAnimationPortal.current
-										)}
-								</Fragment>
-							);
-						})}
-					</ul>
+					<ul>{renderLinks(LINK_SECTION.FRAMES_FORMS)}</ul>
 				</section>
 			</main>
 			<Footer></Footer>
