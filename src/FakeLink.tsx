@@ -9,7 +9,7 @@ type FakeLinkProps = {
 const FakeLink: React.FunctionComponent<FakeLinkProps> = ({ title, isActive, onHover }) => {
 	return (
 		<li onMouseEnter={onHover} className={clsx('cursor-pointer text-6xl')}>
-			<span>--</span>
+			<span className={clsx({ hidden: !isActive })}>-</span>
 			<span>{title}</span>
 		</li>
 	);
