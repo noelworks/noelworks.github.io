@@ -1,14 +1,16 @@
 type LinkHoverAnimationProps = {
 	AnimateFromLeft?: React.FunctionComponent<{}>;
 	AnimateFromRight?: React.FunctionComponent<{}>;
+	isActive: boolean;
 };
 
 const LinkHoverAnimation: React.FunctionComponent<LinkHoverAnimationProps> = ({
 	AnimateFromLeft,
-	AnimateFromRight
+	AnimateFromRight,
+	isActive
 }) => {
 	return (
-		<div>
+		<div className={isActive ? 'bg-amber-300' : ''}>
 			{AnimateFromLeft ? <AnimateFromLeft /> : null}
 			{AnimateFromRight ? <AnimateFromRight /> : null}
 		</div>
